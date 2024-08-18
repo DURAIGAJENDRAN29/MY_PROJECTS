@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOODS DETAILS</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Agbalumo', cursive;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url("ad.jpg")center /cover;
+    }
+
+    .Goods h1 {
+        text-align: center;
+        padding: 0 0 20px 0;
+        margin: 20px;
+        color: #ffffff;
+        border-bottom: 1px #fcfeff;
+    }
+
+    .Goods {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 500px;
+        background: rgba(0, 0, 0, 0.856);
+        border-radius: 10px;
+    }
+
+    .Goods form {
+        padding: 0 20%;
+        box-sizing: border-box;
+    }
+
+    form .details {
+        position: relative;
+        border-bottom: 2px solid #ffffff;
+        margin: 25px 0;
+    }
+
+    .details input {
+        width: 100%;
+        padding: 0 5px;
+        height: 40px;
+        font-size: 20px;
+        color: #ffffff;
+        border: none;
+        background: none;
+        outline: none;
+    }
+
+    .details label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        color: aqua;
+        transform: translateY(-50%);
+        font-size: 20px;
+        pointer-events: none;
+    }
+
+    .details span::before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #000000e0;
+    }
+    .Option select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 5px 0;
+        background-color: #00eeff;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+
+
+
+    .details input:focus~label,
+    .details input:valid~label {
+        top: -5px;
+        color: aqua;
+    }
+
+    .details input:focus~span::before,
+    .details input:valid~span::before {
+        padding: 25%;
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        height: 50px;
+        border: 1px solid;
+        background: aqua;
+        border-radius: 25px;
+        font-size: 18px;
+        color: black;
+        font-weight: 400;
+        cursor: pointer;
+        outline: none;
+    }
+</style>
+<script>
+    function confirmation(){
+        alert("Booked successfully");
+        alert("Driver & truck deatails should send via mail or msg");
+    } 
+</script>
+
+<body>
+    <div class="Goods">
+        <h1>Goods Details</h1>
+        <form action="TMS.html">
+            <div class="details">
+                <input type="text" required>
+                <label for="name">Goods Name</label><br>
+            </div>
+            <div class="details">
+                <input type="text" required>
+                <label for="weight">Goods weight</label>
+                <br>
+            </div>
+            <div class="details">
+                <input type="date" required >
+                <label for="date" style="color: aqua;">loading Date</label>
+                <br>
+            </div>
+            <div class="Option" id="option" style="color: #ffffff;">
+                <label>Choose your vechile</label>
+                <br>
+                <select id="vechile" name="vechile">
+                    <option value="Truck">Truck</option>
+                    <option value="Tipper">Tipper</option>
+                    <option value="container_Truck">container Truck</option>
+                    <option value="others">Others</option>
+                </select>
+            </div><br><br>
+            <input type="submit" value="confirm" onclick="confirmation ()">
+        </form>
+    </div>
+</body>
+
+</html>

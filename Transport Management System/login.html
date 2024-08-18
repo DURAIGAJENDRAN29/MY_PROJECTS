@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+</head>
+<style>
+    *
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: 'Agbalumo', cursive;
+        height: 100vh;
+        display: flex;
+        transition: 0.5%;
+        overflow: auto;
+    }
+    h1{
+        padding-left: 20%;
+        color: aqua;
+        font-size: 50px;
+    }
+    .Driver{
+        position: absolute;
+        top: 60%;
+        left: 35%;
+        transform: translate(-75%,-50%);
+        width: 250px;
+        height: 300px;
+        background: #000000d2;
+        border-radius: 10px;
+    }
+    .admin{
+        position: absolute;
+        top: 60%;
+        left: 75%;
+        transform: translate(-75%,-50%);
+        width: 250px;
+        height: 300px;
+        background: #000000d2;
+        border-radius: 10px;
+    }
+     .img{
+        transform: translate(75%,-50%);
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+        overflow: hidden;
+        align-items: center;
+    }
+    .img:hover{
+        border-color:  aqua;
+    }
+    .btn{
+        width: 50%;
+        height: 50px;
+        border: 2px solid;
+        border-color: aqua;
+        background: black;
+        border-radius: 25px;
+        transform: translate(50%,-50%);
+        font-size: 18px;
+        color: aqua;
+        font-weight: 400;
+        cursor: pointer;
+        outline: none;
+    }
+    .btn a{
+        color: aqua;
+        text-decoration: none;
+    }
+
+
+</style>
+<body style="background-image: url(ad.jpg);background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+    <h1>Welcome to Our Transport</h1>
+    <div class="Driver">
+        <div class="img"><img src="driver-icon.png" alt="driver-icon" style="height: 110px; width: 110px;" ></div><br><br>
+        <p>if your a driver please login</p><br><br>
+        <a href="driverslogin.html"><button class="btn">Login Here</button></a>
+    </div>
+    <div class="admin">
+            <div class="img"><img src="admin.png" alt="driver-icon" style="height: 100px; width: 100px;" ></div><br><br>
+            <p>if your an admin please login</p><br><br>
+            <a href="adminlogin.html"><button class="btn">Login Here</button></a>
+        </div>
+    </div>
+
+    
+</body>
+</html>

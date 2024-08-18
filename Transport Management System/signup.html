@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+</head>
+<style>
+    * body {
+        margin: 0;
+        padding: 0;
+        /* font-family: 'Times New Roman', Times, serif; */
+        font-family: 'Agbalumo', cursive;
+        /* background: linear-gradient(rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url("wallpaper2you_582319.jpg")center /cover; */
+        height: 100vh;
+        display: flex;
+        transition: 0.5%;
+        overflow: auto;
+    }
+
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-25%);
+        width: 700px;
+        height: 1200px;
+        background: #000000d2;
+        border-radius: 50px;
+    }
+
+    .center h1 {
+        text-align: center;
+        padding: 0 0 20px 0;
+        color: white;
+        border-bottom: 1px #00b7ff;
+    }
+
+    .center form {
+        padding: 0 20%;
+        box-sizing: border-box;
+    }
+
+    form .txt_field {
+        position: relative;
+        border-bottom: 1px solid #ffffff;
+        margin: 20px 0;
+    }
+
+    .txt_field input {
+        width: 100%;
+        padding: 0 5px;
+        height: 40px;
+        font-family: 'Agbalumo', cursive;
+        font-size: 16px;
+        color: #ffffff;
+        border: none;
+        background: none;
+        outline: none;
+    }
+
+    .txt_field label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        color: aqua;
+        transform: translateY(-50%);
+        font-size: 16px;
+        pointer-events: none;
+    }
+
+    .txt_field span::before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: rgba(0, 117, 235, 0);
+    }
+
+    .txt_field input:focus~label,
+    .txt_field input:valid~label {
+        top: -5px;
+        color: aqua;
+    }
+
+    .txt_field input:focus~span::before,
+    .txt_field input:valid~span::before {
+        padding: 25%;
+        width: 100%;
+    }
+
+    .Address textarea {
+        width: 100%;
+        height: 80px;
+        padding: 12px 20px;
+        color: #ffffff;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        background-color: aqua;
+        font-size: 16px;
+        resize: none;
+    }
+
+    .Option select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 5px 0;
+        color: black;
+        background-color: aqua;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+
+
+
+    input[type="submit"] {
+        margin: 15px 0;
+        width: 100%;
+        height: 40px;
+        border: 2px solid;
+        background: aqua;
+        border-radius: 25px;
+        font-size: 18px;
+        color: black;
+        font-weight: 400;
+        cursor: pointer;
+        outline: none;
+    }
+
+    input[type="submit"]:hover {
+        border-color: rgb(255, 255, 255);
+        transition: 0.5s;
+    }
+</style>
+<script>
+    function validtition() {
+        var fname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
+        var email = document.getElementById('email').value;
+        var age = document.getElementById('age').value;
+        var mnum = document.getElementById('mnum').value;
+        var address = document.getElementById('address').value;
+
+        if (isNaN(age) || age < 0 || age > 100) {
+            alert("invaild age");
+        }
+        else if (email.indexOf('@') === -1) {
+            alert("invaild email id ");
+        }
+        else if (!/^[0-9]{10}$/.test(mnum)) {
+            alert("invaild mobile number");
+        }
+
+    }
+</script>
+
+<body  style="background-image: url(wallpaper2you_582319.jpg);background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+    <div class="center">
+        <h1>Signup</h1>
+        <form action="connection.php" method="post">
+            <div class="txt_field">
+                <input type="text" id="fname" name="fname" required>
+                <label>First Name</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" id="lname" name="lname" required>
+                <label>Last Name</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" id="email" name="email" required>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" id="age" name="age" required>
+                <label>Age</label>
+            </div><br>
+            <div style="color: aqua;">
+                <label for="Sex" id="gender">Gender :</label>
+                <input type="radio" name="Sex" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" name="Sex" value="Female">
+                <label for="female">Female</label>
+                <input type="radio" name="Sex" value="Others">
+                <label for="others">Others</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" id="mnum" name="mnum" required>
+                <label>Mobile no.</label>
+            </div>
+            <div class="Address" style="color: aqua;">
+                <label>Address</label><br>
+                <br>
+                <textarea name="address" rows="5" cols="50" placeholder="Enter your Address here" id="address" style="color: black;"
+                    required ></textarea>
+            </div><br>
+            <div class="Option" id="option" style="color: #ffffff;">
+
+                <select id="vechile" name="vechile">
+                    <option value="vechile">Choose your vecchie</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Tipper">Tipper</option>
+                    <option value="container_Truck">container Truck</option>
+                    <option value="others">Others</option>
+                </select>
+            </div><br>
+            <div class="txt_field" id="Experiences">
+                <input type="text" name="exp">
+                <label>Experiences</label>
+            </div>
+            <div class="file" id="file" style="color: aqua;">
+                <label>upload your Driving linsence</label>
+                <br><br>
+                <input type="file" name="file">
+            </div><br>
+            <div class="txt_field" id="Username">
+                <input type="text" name="Username">
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="text">
+                <label>New password</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="password">
+                <label>confirm Password</label>
+            </div>
+            <input type="submit" value="Signup" onclick="validtition()">
+        </form>
+    </div>
+</body>
+
+</html>
